@@ -69,7 +69,7 @@ order-payment-service (Kafka 발행)
 * 회원 관리
 * JWT 인증/인가 + Role 기반 접근 제어
 * 적립금 확인, 적립, 사용, 전송 API 제공
-* Redis 기반 Rate Limiter, Circuit Breaker 적용
+* Redis 기반 Rate Limiter 적용
 * Gateway + 인증 필터 통합 설계
 
 ### product-inventory-service
@@ -173,7 +173,6 @@ FortiShop은 실제 트래픽 환경에서의 안정성을 검증하기 위해 *
 | Redis           | TTL 만료, 락 실패    |
 | Kafka           | 메시지 유실, DLQ 재처리, 중복 소비         |
 | DB              | Master 장애 → Slave 전환, Deadlock |
-| Circuit Breaker | 장애 전파 차단, fallback 응답 실험       |
 | Rate Limiting   | Redis 기반 토큰 버킷 방식              |
 | Saga 트랜잭션       | 중간 실패 시 보상 이벤트 발행              |
 | Config/Vault    | 설정 파일 손실/장애 시 대처               |
